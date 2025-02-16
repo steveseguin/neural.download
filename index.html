@@ -513,6 +513,133 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-light);
         }
+            
+        .investment-tag {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            padding: 10px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 600;
+            font-size: 1.2em;
+            border: 2px solid var(--accent);
+            animation: tag-fade 1s ease-out 0.4s backwards;
+        }
+
+        .timing-quote {
+            font-style: italic;
+            color: var(--accent);
+            max-width: 600px;
+            margin: 0 auto 20px;
+            font-size: 1.2em;
+            border-left: 3px solid var(--primary-light);
+            padding-left: 20px;
+            animation: quote-fade 1s ease-out 0.3s backwards;
+        }
+
+        
+        @keyframes tag-fade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .opportunity-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--glass);
+            transition: all 0.3s;
+        }
+        
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glass-darker);
+            border-color: var(--accent);
+        }
+        
+        .market-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .market-card {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--glass);
+            transition: all 0.3s;
+        }
+        
+        .market-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glass-darker);
+            border-color: var(--accent);
+        }
+        
+        .market-card h3 {
+            font-size: 2.5em;
+            color: var(--accent);
+            margin-bottom: 15px;
+            background: linear-gradient(120deg, var(--text), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Adjust tech section for hybrid layout */
+        .tech-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .tech-text {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .tech-text > div {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--glass);
+            transition: all 0.3s;
+        }
+        
+        .tech-text > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glass-darker);
+            border-color: var(--accent);
+        }
+        
+        /* Make sections more cohesive */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body>
@@ -534,6 +661,7 @@
         <div class="hero-content">
             <h1>Neural Download</h1>
             <p>Pioneering the future of human-AI integration through quantum neural mapping technology</p>
+            <p class="timing-quote">"OpenAI raised $1B in 2019. By 2024, they were valued at $86B. The next wave of AI integration will move even faster."</p>
             <p class="investment-tag">Series A Investment Round: $10B</p>
             <a href="#contact" class="cta-button">Connect with Our Investment Team</a>
         </div>
@@ -586,17 +714,19 @@
 
     <section id="technology" class="technology">
         <div class="container">
-            <h2 class="section-title">Technology Roadmap</h2>
-            <div class="tech-details">
-                <div class="tech-text">
-                    <h3>Proprietary Quantum Scanning Technology</h3>
-                    <p>Our patented cesium-based quantum scanning arrays provide unprecedented neural activity detection through laser polarization. Superintelligent AI systems will rapidly accelerate the refinement and capabilities of this technology.</p>
-                    
-                    <h3>Strategic Data Collection</h3>
-                    <p>Parallel deployment of advanced fMRI systems creates an extensive neural pattern database, essential for training AI models and establishing strong IP protection through continuous patent filings.</p>
-                    
-                    <h3>AI-Enhanced Neural Mapping</h3>
-                    <p>Proprietary deep learning models combine quantum scanning and fMRI data to create comprehensive neural maps. Early AI integration enables rapid iteration of scanning technology and expands potential applications.</p>
+            <h2 class="section-title">Our Technology</h2>
+            <div class="tech-text">
+                <div>
+                    <h3>Quantum Neural Scanning</h3>
+                    <p>Our patented cesium-based quantum arrays deliver unprecedented neural activity detection through laser polarization, with superintelligent AI accelerating capabilities. Initial fMRI deployment enables immediate data collection while advancing our quantum technology.</p>
+                </div>
+                <div>
+                    <h3>Strategic AI Integration</h3>
+                    <p>Early partnerships with leading AI labs position us to leverage superintelligent systems for rapid advancement of our scanning technology and neural mapping capabilities. Our AI models are continuously refined through our growing neural pattern database.</p>
+                </div>
+                <div>
+                    <h3>Data & IP Strategy</h3>
+                    <p>Aggressive deployment of scanning systems builds our invaluable neural pattern database, while our extensive patent portfolio protects our quantum scanning technology, AI modeling systems, and neural mapping processes.</p>
                 </div>
             </div>
         </div>
@@ -628,23 +758,47 @@
 
     <section id="market" class="market">
         <div class="container">
-            <h2 class="section-title">Market Opportunity</h2>
+            <h2 class="section-title">Investment Opportunity</h2>
             <div class="market-cards">
                 <div class="market-card">
                     <h3>$500B</h3>
-                    <p>Projected medical diagnostics and treatment market by 2030</p>
+                    <p>Medical diagnostics and treatment market (2030)</p>
                 </div>
                 <div class="market-card">
                     <h3>$300B</h3>
-                    <p>Estimated cognitive enhancement market opportunity</p>
+                    <p>Cognitive enhancement applications</p>
                 </div>
                 <div class="market-card">
                     <h3>$200B</h3>
-                    <p>Neural preservation and digital consciousness market</p>
+                    <p>Neural preservation and digital consciousness</p>
                 </div>
                 <div class="market-card">
                     <h3>$100B</h3>
-                    <p>Annual AI-human interface technology market</p>
+                    <p>AI-human interface technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="applications" class="services">
+        <div class="container">
+            <h2 class="section-title">Applications & Growth</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>Medical Innovation</h3>
+                    <p>Early detection of neurological conditions through precise neural mapping, enabling targeted treatment strategies and real-time monitoring.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Human Enhancement</h3>
+                    <p>Advanced biofeedback systems leveraging AI for cognitive performance, emotional regulation, and accelerated learning.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Consciousness</h3>
+                    <p>Create detailed neural archives for future analysis and interaction, preserving human cognitive patterns.</p>
+                </div>
+                <div class="service-card">
+                    <h3>AI Integration</h3>
+                    <p>Development of precision-mapped interfaces between human cognition and artificial intelligence systems.</p>
                 </div>
             </div>
         </div>
@@ -666,7 +820,7 @@
         </div>
     </section>
 
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
