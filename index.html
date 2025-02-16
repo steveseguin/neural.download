@@ -118,26 +118,7 @@
             width: 100%;
         }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            opacity: 0.05;
-            background: 
-                radial-gradient(circle at center, transparent 0%, rgba(76,175,80,0.1) 50%, transparent 100%);
-            animation: rotate 20s linear infinite;
-        }
+  
 
         @keyframes rotate {
             from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -165,41 +146,13 @@
             to { background-position: 40px 40px; }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            background: linear-gradient(120deg, var(--text), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: title-fade 1s ease-out;
-        }
 
         @keyframes title-fade {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            color: var(--accent);
-            animation: text-fade 1s ease-out 0.3s backwards;
-        }
-
-        @keyframes text-fade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+ 
 
         .cta-button {
             display: inline-block;
@@ -657,6 +610,202 @@
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
             opacity: 0.3;
         }
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #001800 0%, #002800 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 200, 83, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 200, 83, 0.1) 0%, transparent 40%);
+    animation: glow 10s infinite alternate;
+}
+
+@keyframes glow {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #00c853 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleFade 0.8s ease-out;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    animation: subtitleFade 0.8s ease-out 0.2s both;
+}
+
+.hero-quote {
+    font-style: italic;
+    color: #909090;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    border-left: 3px solid #00c853;
+    margin: 2rem 0;
+    background: rgba(0, 200, 83, 0.05);
+    border-radius: 0 8px 8px 0;
+    animation: quoteFade 0.8s ease-out 0.4s both;
+}
+
+.investment-tag {
+    display: inline-block;
+    background: rgba(0, 200, 83, 0.1);
+    color: #00c853;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    margin: 2rem 0;
+    border: 1px solid rgba(0, 200, 83, 0.2);
+    animation: tagFade 0.8s ease-out 0.6s both;
+}
+
+.hero-cta {
+    display: inline-block;
+    background: #00c853;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid #00c853;
+    animation: ctaFade 0.8s ease-out 0.8s both;
+}
+
+.hero-cta:hover {
+    background: transparent;
+    color: #00c853;
+    transform: translateY(-2px);
+}
+
+.neural-network {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #00c853;
+    border-radius: 50%;
+    animation: nodePulse 3s infinite;
+}
+
+.connection {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0,200,83,0.3) 0%, rgba(0,200,83,0.1) 100%);
+    transform-origin: left center;
+}
+
+@keyframes titleFade {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes subtitleFade {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes quoteFade {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes tagFade {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes ctaFade {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes nodePulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 968px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-visual {
+        order: -1;
+        min-height: 300px;
+    }
+
+    .hero-quote {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-cta {
+        width: 100%;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -674,20 +823,22 @@
 
     <div class="neural-grid"></div>
     
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Neural Download</h1>
-            <p>Pioneering the future of human-AI integration through quantum neural mapping technology</p>
-            <p class="timing-quote">"OpenAI raised $1B in 2019. By 2024, they were valued at $86B. The next wave of AI integration will move even faster."</p>
-            <p class="investment-tag">Series A Investment Round: $10B</p>
-            <a href="#contact" class="cta-button">Connect with Our Investment Team</a>
+   <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-title">Neuraldyne</h1>
+                <p class="hero-subtitle">Pioneering the future of human-AI integration through quantum neural mapping technology</p>
+                <blockquote class="hero-quote">
+                    "OpenAI raised $1B in 2019. By 2024, they were valued at $86B. The next wave of AI integration will move even faster."
+                </blockquote>
+                <div class="investment-tag">Series A Investment Round: $10B</div>
+                <a href="#contact" class="hero-cta">Connect with Our Investment Team</a>
+            </div>
+            <div class="hero-visual">
+                <div class="neural-network" id="neuralNetwork"></div>
+            </div>
         </div>
-        <div class="scroll-indicator">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
-        </div>
-    </div>
+    </section>
 
     <section id="features" class="features">
         <div class="container">
@@ -888,6 +1039,59 @@
                 header.classList.remove('scrolled');
             }
         });
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('neuralNetwork');
+            const nodes = [];
+            const connections = [];
+            const numNodes = 12;
+        
+            // Create nodes
+            for (let i = 0; i < numNodes; i++) {
+                const node = document.createElement('div');
+                node.className = 'node';
+                node.style.left = `${Math.random() * 80 + 10}%`;
+                node.style.top = `${Math.random() * 80 + 10}%`;
+                node.style.animationDelay = `${Math.random() * 2}s`;
+                container.appendChild(node);
+                nodes.push(node);
+            }
+        
+            // Create connections between nodes
+            nodes.forEach((node, i) => {
+                nodes.slice(i + 1).forEach(targetNode => {
+                    const connection = document.createElement('div');
+                    connection.className = 'connection';
+                    
+                    // Position and rotate connection
+                    const updateConnection = () => {
+                        const rect1 = node.getBoundingClientRect();
+                        const rect2 = targetNode.getBoundingClientRect();
+                        const containerRect = container.getBoundingClientRect();
+        
+                        const x1 = rect1.left - containerRect.left + rect1.width / 2;
+                        const y1 = rect1.top - containerRect.top + rect1.height / 2;
+                        const x2 = rect2.left - containerRect.left + rect2.width / 2;
+                        const y2 = rect2.top - containerRect.top + rect2.height / 2;
+        
+                        const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+        
+                        connection.style.width = `${length}px`;
+                        connection.style.left = `${x1}px`;
+                        connection.style.top = `${y1}px`;
+                        connection.style.transform = `rotate(${angle}deg)`;
+                    };
+        
+                    container.appendChild(connection);
+                    connections.push(updateConnection);
+                    updateConnection();
+                });
+            });
+        
+            // Update connections on window resize
+            window.addEventListener('resize', () => {
+                connections.forEach(update => update());
+            });
     </script>
 </body>
 </html>
