@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1b5e20;
-            --primary-light: #4caf50;
-            --primary-dark: #0a0f0a;
-            --accent: #a5d6a7;
+            --primary: #1a472a;
+            --primary-light: #2e7d32;
+            --primary-dark: #0a1f0a;
+            --accent: #81c784;
             --text: #f5f5f5;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-darker: rgba(0, 0, 0, 0.2);
             --text-dark: #333;
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-darker: rgba(0, 0, 0, 0.3);
             --max-width: 1400px;
         }
 
@@ -51,8 +51,8 @@
         }
 
         header {
-            background: rgba(27, 94, 32, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(26, 71, 42, 0.95);
+            backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(10px);
             padding: 20px 0;
             position: fixed;
@@ -63,8 +63,8 @@
         }
 
         header.scrolled {
-            background: rgba(27, 94, 32, 0.95);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            background: rgba(26, 71, 42, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .header-content {
@@ -123,7 +123,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: radial-gradient(circle at center, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             overflow: hidden;
             padding-top: 80px;
         }
@@ -133,6 +133,7 @@
             position: absolute;
             width: 200%;
             height: 200%;
+            opacity: 0.05;
             background: 
                 radial-gradient(circle at center, transparent 0%, rgba(76,175,80,0.1) 50%, transparent 100%);
             animation: rotate 20s linear infinite;
@@ -152,7 +153,8 @@
             background: 
                 linear-gradient(rgba(76,175,80,0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(76,175,80,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-size: 40px 40px;
+            opacity: 0.03;
             transform: perspective(500px) rotateX(45deg);
             transform-origin: center center;
             animation: grid-move 20s linear infinite;
@@ -160,7 +162,7 @@
 
         @keyframes grid-move {
             from { background-position: 0 0; }
-            to { background-position: 30px 30px; }
+            to { background-position: 40px 40px; }
         }
 
         .hero-content {
@@ -202,7 +204,7 @@
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            background: var(--primary-light);
             color: white;
             text-decoration: none;
             border-radius: 30px;
@@ -210,11 +212,12 @@
             transition: all 0.3s;
             border: 2px solid transparent;
             animation: button-fade 1s ease-out 0.6s backwards;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(76,175,80,0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             border-color: var(--accent);
         }
 
@@ -496,6 +499,18 @@
             }
         }
 
+        .feature-card, .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover, .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
@@ -515,15 +530,16 @@
         }
             
         .investment-tag {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            background: var(--primary);
             padding: 10px 25px;
             border-radius: 30px;
             display: inline-block;
             margin: 20px 0;
             font-weight: 600;
             font-size: 1.2em;
-            border: 2px solid var(--accent);
+            border: 1px solid var(--accent);
             animation: tag-fade 1s ease-out 0.4s backwards;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .timing-quote {
@@ -574,17 +590,18 @@
         }
         
         .market-card {
-            background: var(--glass);
+            background: rgba(255, 255, 255, 0.02);
             padding: 30px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid var(--glass);
             transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
         .market-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px var(--glass-darker);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             border-color: var(--accent);
         }
         
