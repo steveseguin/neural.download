@@ -413,6 +413,63 @@
 
         .footer-links a:hover { color: var(--accent); }
 
+        /* Animations */
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 { animation: fade-up 0.8s ease-out; }
+        .hero-body { animation: fade-up 0.8s ease-out 0.12s both; }
+        .hero-aside { animation: fade-up 0.8s ease-out 0.24s both; }
+        .cta-group { animation: fade-up 0.8s ease-out 0.36s both; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .stagger-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible > :nth-child(1) { transition-delay: 0s; }
+        .stagger-children.visible > :nth-child(2) { transition-delay: 0.08s; }
+        .stagger-children.visible > :nth-child(3) { transition-delay: 0.16s; }
+        .stagger-children.visible > :nth-child(4) { transition-delay: 0.24s; }
+
+        /* Hero brain visual */
+        .hero-brain {
+            position: absolute;
+            right: -60px;
+            bottom: -40px;
+            width: 380px;
+            height: 380px;
+            opacity: 0.06;
+            pointer-events: none;
+            animation: brain-pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes brain-pulse {
+            0%, 100% { opacity: 0.06; transform: scale(1); }
+            50% { opacity: 0.09; transform: scale(1.02); }
+        }
+
+        .hero { position: relative; overflow: hidden; }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-toggle { display: block; }
@@ -454,6 +511,28 @@
     </header>
 
     <div class="hero">
+        <svg class="hero-brain" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M150 30 C100 30, 50 70, 50 130 C50 180, 80 220, 110 240 C120 246, 130 260, 140 270 L160 270 C170 260, 180 246, 190 240 C220 220, 250 180, 250 130 C250 70, 200 30, 150 30Z" stroke="var(--accent)" stroke-width="1" fill="none"/>
+            <path d="M150 50 C150 90, 120 120, 120 160 C120 190, 140 210, 150 230" stroke="var(--accent)" stroke-width="0.8" fill="none"/>
+            <path d="M110 80 C130 90, 140 110, 130 140" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
+            <path d="M190 80 C170 90, 160 110, 170 140" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
+            <path d="M80 120 C100 115, 120 125, 130 150" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
+            <path d="M220 120 C200 115, 180 125, 170 150" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
+            <circle cx="110" cy="80" r="3" fill="var(--accent)"/>
+            <circle cx="190" cy="80" r="3" fill="var(--accent)"/>
+            <circle cx="80" cy="120" r="2.5" fill="var(--accent)"/>
+            <circle cx="220" cy="120" r="2.5" fill="var(--accent)"/>
+            <circle cx="130" cy="140" r="2.5" fill="var(--accent)"/>
+            <circle cx="170" cy="140" r="2.5" fill="var(--accent)"/>
+            <circle cx="150" cy="160" r="3" fill="var(--accent)"/>
+            <circle cx="120" cy="190" r="2" fill="var(--accent)"/>
+            <circle cx="180" cy="190" r="2" fill="var(--accent)"/>
+            <line x1="110" y1="80" x2="130" y2="140" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
+            <line x1="190" y1="80" x2="170" y2="140" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
+            <line x1="130" y1="140" x2="170" y2="140" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
+            <line x1="150" y1="160" x2="120" y2="190" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
+            <line x1="150" y1="160" x2="180" y2="190" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
+        </svg>
         <div class="hero-content">
             <h1>Your brain.<br><em>Backed up.</em></h1>
             <p class="hero-body">We scan your brain with clinical-grade imaging &mdash; 7T fMRI, 256-channel EEG, diffusion tensor &mdash; and build a computational model of how your specific brain works. Not an average. Not a diagram. A working simulation of your neural architecture.</p>
@@ -468,11 +547,11 @@
     <!-- How It Works -->
     <section id="how-it-works">
         <div class="container">
-            <div class="section-label">The Process</div>
-            <h2 class="section-title">Ninety minutes in a scanner. Years of insight.</h2>
-            <p class="section-body">The scan is completely non-invasive. No contrast agents, no radiation. You sit in a chair and we capture everything we need. The hard part is what happens after.</p>
+            <div class="section-label reveal">The Process</div>
+            <h2 class="section-title reveal">Ninety minutes in a scanner. Years of insight.</h2>
+            <p class="section-body reveal">The scan is completely non-invasive. No contrast agents, no radiation. You sit in a chair and we capture everything we need. The hard part is what happens after.</p>
 
-            <div class="process-steps">
+            <div class="process-steps stagger-children">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div>
@@ -501,11 +580,11 @@
     <!-- What You Get -->
     <section id="what-you-get">
         <div class="container">
-            <div class="section-label">What You Get</div>
-            <h2 class="section-title">Your brain, in your hands</h2>
-            <p class="section-body">This isn't a wellness app. It's the most detailed picture of your brain that current technology can produce. What you do with it is up to you.</p>
+            <div class="section-label reveal">What You Get</div>
+            <h2 class="section-title reveal">Your brain, in your hands</h2>
+            <p class="section-body reveal">This isn't a wellness app. It's the most detailed picture of your brain that current technology can produce. What you do with it is up to you.</p>
 
-            <div class="app-grid">
+            <div class="app-grid stagger-children">
                 <div class="app-card">
                     <h3>Track cognitive change</h3>
                     <p>Compare scans over months and years. Subtle shifts in connectivity or function show up long before symptoms do. Not a diagnosis &mdash; a signal worth paying attention to.</p>
@@ -529,9 +608,9 @@
     <!-- Privacy -->
     <section id="privacy">
         <div class="container">
-            <div class="section-label">Privacy</div>
-            <h2 class="section-title">Your data. Literally no one else's.</h2>
-            <div class="privacy-content">
+            <div class="section-label reveal">Privacy</div>
+            <h2 class="section-title reveal">Your data. Literally no one else's.</h2>
+            <div class="privacy-content reveal">
                 <p>Brain scans are the most intimate data that exists. More personal than DNA. We treat them that way.</p>
                 <p>There is no business model that involves selling your data. There never will be. If that changes, the company has failed.</p>
                 <ul class="privacy-list">
@@ -549,11 +628,11 @@
     <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <div class="section-label">Get in Touch</div>
-            <h2 class="section-title">We're building this carefully</h2>
-            <p class="section-body">Early access is limited. We're onboarding people slowly because the imaging pipeline needs to be right before it's fast. If that sounds reasonable to you, get in touch.</p>
+            <div class="section-label reveal">Get in Touch</div>
+            <h2 class="section-title reveal">We're building this carefully</h2>
+            <p class="section-body reveal">Early access is limited. We're onboarding people slowly because the imaging pipeline needs to be right before it's fast. If that sounds reasonable to you, get in touch.</p>
 
-            <div class="contact-grid">
+            <div class="contact-grid stagger-children">
                 <div class="contact-card">
                     <h3>Early access</h3>
                     <p>Want to be scanned. Have questions about the process.</p>
@@ -609,6 +688,14 @@
         document.querySelector('.nav-toggle').addEventListener('click', () => {
             document.querySelector('nav').classList.toggle('open');
         });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal, .stagger-children').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
