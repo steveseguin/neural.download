@@ -3,49 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Neural Download is building the future of personal neural mapping — creating digital backups of your cognitive patterns for longevity, medical insight, and personal enhancement.">
-    <title>Neural Download — Personal Neural Mapping for Longevity &amp; Insight</title>
+    <meta name="description" content="Neural Download creates digital backups of your brain. High-resolution neural imaging, computational modeling, and a personal cognitive profile you actually own.">
+    <title>Neural Download &mdash; Your brain. Backed up.</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0iIzFiNWUyMCIvPjxwYXRoIGQ9Ik0zMCAzNSBDNDAgMjUsIDYwIDI1LCA3MCAzNSIgc3Ryb2tlPSIjNGNhZjUwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMzAgNTAgQzQwIDQwLCA2MCA0MCwgNzAgNTAiIHN0cm9rZT0iIzRjYWY1MCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTMwIDY1IEM0MCA1NSwgNjAgNTUsIDcwIDY1IiBzdHJva2U9IiM0Y2FmNTAiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzUiIHI9IjQiIGZpbGw9IiNhNWQ2YTciLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjM1IiByPSI0IiBmaWxsPSIjYTVkNmE3Ii8+PGNpcmNsZSBjeD0iMzAiIGN5PSI1MCIgcj0iNCIgZmlsbD0iI2E1ZDZhNyIvPjxjaXJjbGUgY3g9IjcwIiBjeT0iNTAiIHI9IjQiIGZpbGw9IiNhNWQ2YTciLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjY1IiByPSI0IiBmaWxsPSIjYTVkNmE3Ii8+PGNpcmNsZSBjeD0iNzAiIGN5PSI2NSIgcj0iNCIgZmlsbD0iI2E1ZDZhNyIvPjwvc3ZnPg==">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a472a;
             --primary-light: #2e7d32;
-            --primary-dark: #0a1f0a;
+            --primary-dark: #071209;
             --accent: #81c784;
-            --text: #f5f5f5;
-            --glass: rgba(255, 255, 255, 0.08);
-            --glass-darker: rgba(0, 0, 0, 0.2);
-            --text-muted: #b0bab2;
-            --max-width: 1200px;
+            --warm: #c8b88a;
+            --text: #f0efe8;
+            --text-body: #c4c3ba;
+            --text-muted: #8a8980;
+            --glass: rgba(255, 255, 255, 0.04);
+            --max-width: 860px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
         body {
-            margin: 0;
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--primary-dark);
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--primary-dark);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary: #1b5e20;
-                --primary-light: #4caf50;
-                --primary-dark: #050705;
-                --text: #ffffff;
-            }
+        h1, h2, h3, h4, nav, header, footer, .section-label, .step-number, .stat-num, .cta-button {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .container {
@@ -54,22 +42,15 @@
             padding: 0 24px;
         }
 
-        /* ── Header ── */
+        /* Header */
         header {
             background: rgba(26, 71, 42, 0.95);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-
-        header.scrolled {
-            background: rgba(10, 31, 10, 0.98);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-content {
@@ -79,79 +60,48 @@
         }
 
         .logo {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 700;
             color: var(--text);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             letter-spacing: -0.02em;
         }
 
         .logo-dot {
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: var(--accent);
             border-radius: 50%;
-            margin-left: 2px;
+            margin-left: 1px;
         }
 
         nav {
             display: flex;
-            gap: 28px;
+            gap: 24px;
             align-items: center;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.95em;
+            font-size: 0.9em;
             font-weight: 500;
-            padding: 4px 0;
             transition: color 0.3s;
-            position: relative;
         }
 
-        nav a:hover {
-            color: var(--text);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover { color: var(--text); }
 
         .nav-cta {
             background: var(--primary-light);
             color: white !important;
-            padding: 8px 20px;
+            padding: 7px 18px;
             border-radius: 6px;
             font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
         }
 
-        .nav-cta:hover {
-            background: #388e3c;
-            transform: translateY(-1px);
-        }
+        .nav-cta:hover { background: #388e3c; }
 
-        .nav-cta::after {
-            display: none;
-        }
-
-        /* ── Mobile nav toggle ── */
         .nav-toggle {
             display: none;
             background: none;
@@ -162,799 +112,310 @@
 
         .nav-toggle span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--text);
             margin: 5px 0;
-            transition: all 0.3s;
         }
 
-        /* ── Hero ── */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 60%, #1b4332 100%);
-            overflow: hidden;
             padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            opacity: 0.04;
-            background: radial-gradient(circle at 30% 50%, rgba(76,175,80,0.15) 0%, transparent 50%),
-                         radial-gradient(circle at 70% 30%, rgba(129,199,132,0.1) 0%, transparent 40%);
-            animation: rotate 30s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: translate(-25%, -25%) rotate(0deg); }
-            to { transform: translate(-25%, -25%) rotate(360deg); }
-        }
-
-        .neural-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(rgba(76,175,80,0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(76,175,80,0.08) 1px, transparent 1px);
-            background-size: 60px 60px;
-            opacity: 0.03;
-            transform: perspective(600px) rotateX(35deg);
-            transform-origin: center top;
-            animation: grid-move 25s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes grid-move {
-            from { background-position: 0 0; }
-            to { background-position: 60px 60px; }
+            background: linear-gradient(170deg, var(--primary-dark) 0%, var(--primary) 70%, #1b4332 100%);
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
+            max-width: 620px;
             margin: 0 auto;
-            text-align: center;
-            padding: 0 24px;
-        }
-
-        .hero-label {
-            display: inline-block;
-            font-size: 0.85em;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 20px;
-            animation: fade-up 0.8s ease-out;
+            padding: 60px 24px;
         }
 
         .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            line-height: 1.15;
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            line-height: 1.12;
             font-weight: 700;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--text) 30%, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fade-up 0.8s ease-out 0.1s backwards;
-        }
-
-        .hero-sub {
-            font-size: 1.25em;
-            margin-bottom: 16px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            animation: fade-up 0.8s ease-out 0.2s backwards;
-        }
-
-        .timing-quote {
-            font-style: italic;
-            color: var(--accent);
-            max-width: 540px;
-            margin: 24px auto 28px;
-            font-size: 1em;
-            border-left: 3px solid var(--primary-light);
-            padding-left: 20px;
-            text-align: left;
-            line-height: 1.6;
-            animation: fade-up 0.8s ease-out 0.3s backwards;
-        }
-
-        .timing-quote span {
-            display: block;
-            font-style: normal;
-            font-size: 0.85em;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
-
-        .hero-funding {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(129,199,132,0.25);
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.95em;
             margin-bottom: 28px;
-            animation: fade-up 0.8s ease-out 0.4s backwards;
+            color: var(--text);
         }
 
-        .hero-funding .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            animation: pulse-dot 2s ease-in-out infinite;
+        .hero h1 em {
+            font-style: normal;
+            color: var(--accent);
         }
 
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+        .hero-body {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            margin-bottom: 20px;
+            line-height: 1.85;
+        }
+
+        .hero-aside {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
         }
 
         .cta-group {
             display: flex;
             gap: 16px;
-            justify-content: center;
             flex-wrap: wrap;
-            animation: fade-up 0.8s ease-out 0.5s backwards;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 14px 32px;
-            background: var(--primary-light);
-            color: white;
-            text-decoration: none;
+            padding: 13px 28px;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 1em;
+            font-size: 0.95rem;
+            text-decoration: none;
             transition: all 0.3s;
             border: 2px solid transparent;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(46,125,50,0.4);
+        .cta-primary {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .cta-primary:hover {
             background: #388e3c;
+            transform: translateY(-1px);
         }
 
         .cta-secondary {
             background: transparent;
-            border: 2px solid rgba(129,199,132,0.4);
+            border-color: rgba(129,199,132,0.3);
             color: var(--accent);
         }
 
         .cta-secondary:hover {
-            background: rgba(129,199,132,0.1);
+            background: rgba(129,199,132,0.08);
             border-color: var(--accent);
-            box-shadow: none;
         }
 
-        @keyframes fade-up {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2.5s infinite;
-            opacity: 0.5;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-8px); }
-            60% { transform: translateX(-50%) translateY(-4px); }
-        }
-
-        /* ── Sections ── */
+        /* Sections */
         section {
             padding: 100px 0;
-            position: relative;
         }
 
         section::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 10%;
-            right: 10%;
+            position: relative;
+            display: block;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(129,199,132,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(129,199,132,0.15), transparent);
+            margin-bottom: 100px;
         }
 
         .section-label {
-            display: block;
-            text-align: center;
-            font-size: 0.8em;
+            font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .section-title {
-            font-size: 2.6em;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
             font-weight: 700;
             letter-spacing: -0.02em;
+            margin-bottom: 24px;
             color: var(--text);
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 60px;
-            font-size: 1.1em;
-            line-height: 1.6;
+        .section-body {
+            color: var(--text-body);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin-bottom: 48px;
+            line-height: 1.85;
         }
 
-        /* ── Platform Section (Features) ── */
-        .features {
-            background: linear-gradient(180deg, var(--primary-dark), rgba(26,71,42,0.15), var(--primary-dark));
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 36px 28px;
-            border-radius: 16px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(129,199,132,0.2);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(129,199,132,0.1);
-            border-radius: 12px;
+        /* Process steps */
+        .process-steps {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--accent);
+            flex-direction: column;
+            gap: 32px;
         }
 
-        .feature-card h3 {
-            color: var(--text);
-            margin-bottom: 12px;
-            font-size: 1.2em;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        /* ── Science / How It Works ── */
-        .technology {
-            background: var(--primary-dark);
-        }
-
-        .tech-steps {
+        .process-step {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 20px;
-            counter-reset: step;
-        }
-
-        .tech-step {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 36px 28px;
-            border-radius: 16px;
-            transition: all 0.3s;
-            counter-increment: step;
-            position: relative;
-        }
-
-        .tech-step:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(129,199,132,0.2);
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(129,199,132,0.12);
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.9em;
-            margin-bottom: 20px;
-        }
-
-        .tech-step h3 {
-            color: var(--text);
-            margin-bottom: 12px;
-            font-size: 1.15em;
-            font-weight: 600;
-        }
-
-        .tech-step p {
-            color: var(--text-muted);
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        /* ── Market ── */
-        .market {
-            background: linear-gradient(180deg, var(--primary-dark), rgba(26,71,42,0.1), var(--primary-dark));
-        }
-
-        .market-cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .market-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 32px 20px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.3s;
-        }
-
-        .market-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(129,199,132,0.2);
-        }
-
-        .market-card h3 {
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, var(--text), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .market-card p {
-            color: var(--text-muted);
-            font-size: 0.9em;
-            line-height: 1.5;
-        }
-
-        .market-card .market-source {
-            display: block;
-            font-size: 0.75em;
-            color: rgba(176,186,178,0.6);
-            margin-top: 8px;
-        }
-
-        /* ── Applications ── */
-        .applications {
-            background: var(--primary-dark);
-        }
-
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .app-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 36px 28px;
-            border-radius: 16px;
-            transition: all 0.3s;
-            display: flex;
+            grid-template-columns: 48px 1fr;
             gap: 20px;
-        }
-
-        .app-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(129,199,132,0.2);
-        }
-
-        .app-icon {
-            flex-shrink: 0;
-            width: 44px;
-            height: 44px;
-            background: rgba(129,199,132,0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-        }
-
-        .app-card h3 {
-            color: var(--text);
-            font-size: 1.15em;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .app-card p {
-            color: var(--text-muted);
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        /* ── About ── */
-        .about {
-            background: linear-gradient(180deg, var(--primary-dark), rgba(26,71,42,0.1), var(--primary-dark));
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
             align-items: start;
         }
 
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
+        .step-number {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(129,199,132,0.1);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .process-step h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .process-step p {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        /* Applications */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .app-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .app-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .app-card p {
+            color: var(--text-body);
+            font-size: 0.92rem;
             line-height: 1.7;
         }
 
-        .about-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            padding: 24px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .stat-card .stat-num {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .stat-card .stat-label {
-            font-size: 0.85em;
-            color: var(--text-muted);
-        }
-
-        /* ── Research ── */
-        .research {
-            background: var(--primary-dark);
-        }
-
-        .research-list {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .research-item {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            padding: 24px 28px;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .research-item:hover {
-            border-color: rgba(129,199,132,0.2);
-        }
-
-        .research-item h4 {
-            color: var(--text);
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .research-item p {
-            color: var(--text-muted);
-            font-size: 0.9em;
-        }
-
-        .research-item .research-meta {
-            font-size: 0.8em;
-            color: rgba(176,186,178,0.5);
-            margin-top: 8px;
-        }
-
-        /* ── Careers ── */
-        .careers {
-            background: linear-gradient(180deg, var(--primary-dark), rgba(26,71,42,0.1), var(--primary-dark));
-        }
-
-        .careers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .career-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            padding: 24px 28px;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .career-card:hover {
-            border-color: rgba(129,199,132,0.2);
-            transform: translateY(-2px);
-        }
-
-        .career-card h4 {
-            color: var(--text);
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .career-card .career-team {
-            color: var(--accent);
-            font-size: 0.85em;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .career-card p {
-            color: var(--text-muted);
-            font-size: 0.88em;
-            line-height: 1.5;
-        }
-
-        /* ── Privacy ── */
-        .privacy {
-            background: var(--primary-dark);
-        }
-
+        /* Privacy section */
         .privacy-content {
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 560px;
         }
 
         .privacy-content p {
-            color: var(--text-muted);
+            color: var(--text-body);
             margin-bottom: 16px;
-            line-height: 1.7;
-            font-size: 0.95em;
+            line-height: 1.85;
+            font-size: 0.98rem;
         }
 
-        .privacy-content h3 {
-            color: var(--text);
-            font-size: 1.1em;
-            margin-top: 28px;
-            margin-bottom: 12px;
+        .privacy-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 24px;
         }
 
-        .privacy-content ul {
-            color: var(--text-muted);
+        .privacy-list li {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            padding: 8px 0;
             padding-left: 20px;
-            margin-bottom: 16px;
-            font-size: 0.95em;
+            position: relative;
+            line-height: 1.7;
         }
 
-        .privacy-content ul li {
-            margin-bottom: 8px;
-            line-height: 1.6;
+        .privacy-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 8px;
+            height: 2px;
+            background: var(--accent);
         }
 
-        /* ── Contact ── */
-        .contact {
-            background: linear-gradient(180deg, var(--primary-dark), rgba(26,71,42,0.15));
-        }
-
+        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
+            gap: 20px;
         }
 
         .contact-card {
-            background: rgba(255,255,255,0.03);
+            background: var(--glass);
             border: 1px solid rgba(255,255,255,0.06);
-            padding: 32px;
-            border-radius: 16px;
+            border-radius: 12px;
+            padding: 28px;
         }
 
         .contact-card h3 {
-            color: var(--text);
-            font-size: 1.1em;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            color: var(--text);
         }
 
         .contact-card p {
-            color: var(--text-muted);
-            font-size: 0.95em;
-            margin-bottom: 8px;
+            color: var(--text-body);
+            font-size: 0.92rem;
             line-height: 1.6;
+            margin-bottom: 8px;
         }
 
         .contact-card a {
             color: var(--accent);
             text-decoration: none;
-            transition: color 0.2s;
         }
 
-        .contact-card a:hover {
-            color: var(--text);
-        }
+        .contact-card a:hover { color: var(--text); }
 
-        /* ── Footer ── */
+        /* Footer */
         footer {
             background: var(--primary);
-            padding: 48px 0 32px;
-            position: relative;
-            overflow: hidden;
+            padding: 40px 0;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.02));
-        }
-
-        .footer-content {
+        .footer-inner {
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            flex-wrap: wrap;
-            gap: 32px;
-            position: relative;
+            align-items: center;
         }
 
-        .footer-brand {
-            max-width: 280px;
-        }
-
-        .footer-brand .logo {
-            font-size: 1.3em;
-            margin-bottom: 12px;
-        }
-
-        .footer-brand p {
+        .footer-text {
             color: var(--text-muted);
-            font-size: 0.85em;
-            line-height: 1.6;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
         }
 
         .footer-links {
             display: flex;
-            gap: 48px;
+            gap: 24px;
         }
 
-        .footer-section h4 {
-            color: var(--text);
-            margin-bottom: 16px;
-            font-size: 0.9em;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-section a {
+        .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9em;
-            transition: color 0.2s;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
         }
 
-        .footer-section a:hover {
-            color: var(--accent);
-        }
+        .footer-links a:hover { color: var(--accent); }
 
-        .footer-bottom {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            text-align: center;
-            position: relative;
-            color: var(--text-muted);
-            font-size: 0.85em;
-        }
-
-        /* ── Scrollbar ── */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--primary-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-light);
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 1024px) {
-            .features-grid,
-            .tech-steps {
-                grid-template-columns: 1fr 1fr;
-            }
-            .market-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                position: relative;
-            }
-
-            .nav-toggle {
-                display: block;
-            }
-
+            .nav-toggle { display: block; }
             nav {
                 display: none;
                 position: absolute;
@@ -964,85 +425,15 @@
                 background: rgba(10,31,10,0.98);
                 flex-direction: column;
                 padding: 20px 24px;
-                gap: 16px;
-                backdrop-filter: blur(12px);
+                gap: 14px;
             }
-
-            nav.open {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.4em;
-            }
-
-            .hero-sub {
-                font-size: 1.05em;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .features-grid,
-            .tech-steps,
-            .market-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .app-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 32px;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.9em;
-            }
-
-            .hero-sub {
-                font-size: 1em;
-            }
-
-            .cta-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .market-card h3 {
-                font-size: 1.8em;
-            }
+            nav.open { display: flex; }
+            .hero h1 { font-size: 2.2rem; }
+            .app-grid, .contact-grid { grid-template-columns: 1fr; }
+            .process-step { grid-template-columns: 40px 1fr; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+            .cta-group { flex-direction: column; }
+            .cta-button { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -1054,422 +445,169 @@
                 <span></span><span></span><span></span>
             </button>
             <nav>
-                <a href="#platform">Platform</a>
-                <a href="#science">Science</a>
-                <a href="#applications">Applications</a>
-                <a href="#about">About</a>
-                <a href="#careers">Careers</a>
-                <a href="#contact" class="nav-cta">Get in Touch</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#what-you-get">What You Get</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#contact" class="nav-cta">Early Access</a>
             </nav>
         </div>
     </header>
 
     <div class="hero">
-        <div class="neural-grid"></div>
         <div class="hero-content">
-            <span class="hero-label">Personal Neural Mapping</span>
-            <h1>Your mind, mapped and preserved</h1>
-            <p class="hero-sub">We combine high-resolution neural imaging with computational modeling to create a digital backup of your unique cognitive patterns &mdash; for medical insight, longevity research, and personal enhancement.</p>
-
-            <div class="timing-quote">
-                "OpenAI raised $1B in 2019. By 2024, they were valued at $86B. The next frontier of AI is not just artificial intelligence &mdash; it is understanding our own."
-                <span>&mdash; Neural Download founding thesis</span>
-            </div>
-
-            <div class="hero-funding">
-                <span class="dot"></span>
-                Advancing the future of clinical neural mapping
-            </div>
-
+            <h1>Your brain.<br><em>Backed up.</em></h1>
+            <p class="hero-body">We scan your brain with clinical-grade imaging &mdash; 7T fMRI, 256-channel EEG, diffusion tensor &mdash; and build a computational model of how your specific brain works. Not an average. Not a diagram. A working simulation of your neural architecture.</p>
+            <p class="hero-aside">Think of it as version control for the most complex thing you own. The imaging technology exists today. The compute to model it exists today. Nobody had put them together for individuals until now.</p>
             <div class="cta-group">
-                <a href="#platform" class="cta-button">Explore the Platform</a>
-                <a href="#contact" class="cta-button cta-secondary">Request Early Access</a>
+                <a href="#how-it-works" class="cta-button cta-primary">See how it works</a>
+                <a href="#contact" class="cta-button cta-secondary">Request early access</a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
         </div>
     </div>
 
-    <!-- Platform -->
-    <section id="platform" class="features">
+    <!-- How It Works -->
+    <section id="how-it-works">
         <div class="container">
-            <span class="section-label">Platform</span>
-            <h2 class="section-title">A new standard in neural mapping</h2>
-            <p class="section-subtitle">Our platform integrates clinical-grade imaging, advanced computational neuroscience, and secure data infrastructure to produce the most comprehensive personal neural profile available.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                    </div>
-                    <h3>High-Resolution Neural Imaging</h3>
-                    <p>Multi-modal data acquisition combining 7T fMRI, high-density EEG (256-channel), and diffusion tensor imaging to capture structural and functional connectivity at unprecedented resolution.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    </div>
-                    <h3>Computational Modeling</h3>
-                    <p>Proprietary deep learning pipelines reconstruct individual connectomes and simulate neural dynamics, producing a living computational model of your brain's unique architecture.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    </div>
-                    <h3>Secure Cognitive Vault</h3>
-                    <p>Your neural profile is encrypted at rest and in transit. You own your data. Full export, full deletion, zero third-party access without your consent.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="section-label">The Process</div>
+            <h2 class="section-title">Ninety minutes in a scanner. Years of insight.</h2>
+            <p class="section-body">The scan is completely non-invasive. No contrast agents, no radiation. You sit in a chair and we capture everything we need. The hard part is what happens after.</p>
 
-    <!-- Science -->
-    <section id="science" class="technology">
-        <div class="container">
-            <span class="section-label">The Science</span>
-            <h2 class="section-title">How Neural Download works</h2>
-            <p class="section-subtitle">A three-stage process grounded in established neuroscience and validated clinical imaging protocols.</p>
-            <div class="tech-steps">
-                <div class="tech-step">
+            <div class="process-steps">
+                <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Acquisition</h3>
-                    <p>A 90-minute session at one of our partner imaging centers. We capture resting-state and task-based fMRI, high-density EEG, and DTI scans. Completely non-invasive &mdash; no contrast agents, no radiation.</p>
+                    <div>
+                        <h3>Scan</h3>
+                        <p>A 90-minute session at a partner imaging center near you. We capture resting-state fMRI, task-based fMRI, high-density EEG, and DTI. The scans map both the physical wiring and the electrical activity of your brain in real time.</p>
+                    </div>
                 </div>
-                <div class="tech-step">
+                <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Reconstruction</h3>
-                    <p>Our pipeline aligns and fuses multi-modal data to build a personalized connectome &mdash; a detailed map of the structural and functional pathways that define your cognition, memory, and personality.</p>
+                    <div>
+                        <h3>Reconstruct</h3>
+                        <p>Our pipeline aligns and fuses all four data modalities into a single connectome &mdash; a map of the structural pathways and functional connections that make your cognition, memory, and personality work the way they do. This takes about a week of compute.</p>
+                    </div>
                 </div>
-                <div class="tech-step">
+                <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>Modeling &amp; Insight</h3>
-                    <p>Machine learning models trained on thousands of neural profiles generate your Cognitive Profile &mdash; a living, updateable model that surfaces actionable medical insights and tracks cognitive change over time.</p>
+                    <div>
+                        <h3>Model</h3>
+                        <p>Machine learning trained on thousands of other neural profiles builds your Cognitive Profile &mdash; a living computational model that you can update with future scans. It tracks change over time. It surfaces things worth talking to your doctor about.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Market -->
-    <section id="market" class="market">
+    <!-- What You Get -->
+    <section id="what-you-get">
         <div class="container">
-            <span class="section-label">Market</span>
-            <h2 class="section-title">Building at the intersection of three surging markets</h2>
-            <p class="section-subtitle">Neural Download sits at the convergence of neuroimaging, brain-computer interfaces, and digital health &mdash; sectors projected to grow rapidly through the end of the decade.</p>
-            <div class="market-cards">
-                <div class="market-card">
-                    <h3>Neuroimaging</h3>
-                    <p>A multi-billion dollar global market projected to grow significantly through 2030</p>
-                </div>
-                <div class="market-card">
-                    <h3>BCI</h3>
-                    <p>Brain-computer interfaces are among the fastest growing segments in neurotechnology</p>
-                </div>
-                <div class="market-card">
-                    <h3>Digital Health</h3>
-                    <p>The broader digital health market continues to expand rapidly worldwide</p>
-                </div>
-                <div class="market-card">
-                    <h3>AI in Healthcare</h3>
-                    <p>AI-driven healthcare applications are seeing accelerating adoption and investment</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="section-label">What You Get</div>
+            <h2 class="section-title">Your brain, in your hands</h2>
+            <p class="section-body">This isn't a wellness app. It's the most detailed picture of your brain that current technology can produce. What you do with it is up to you.</p>
 
-    <!-- Applications -->
-    <section id="applications" class="applications">
-        <div class="container">
-            <span class="section-label">Applications</span>
-            <h2 class="section-title">What you can do with your neural profile</h2>
-            <p class="section-subtitle">Your Cognitive Profile unlocks value across medical, wellness, and personal domains.</p>
             <div class="app-grid">
                 <div class="app-card">
-                    <div class="app-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <div>
-                        <h3>Early Neurological Detection</h3>
-                        <p>Longitudinal comparison of your neural profiles may help surface subtle changes worth discussing with your physician. This is not a diagnostic tool.</p>
-                    </div>
+                    <h3>Track cognitive change</h3>
+                    <p>Compare scans over months and years. Subtle shifts in connectivity or function show up long before symptoms do. Not a diagnosis &mdash; a signal worth paying attention to.</p>
                 </div>
                 <div class="app-card">
-                    <div class="app-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <div>
-                        <h3>Cognitive Performance</h3>
-                        <p>Explore your cognitive patterns over time. Observe how lifestyle changes correlate with your neural data for personal insight.</p>
-                    </div>
+                    <h3>Understand your patterns</h3>
+                    <p>See how your brain's resting networks correlate with focus, sleep quality, and stress. Not generic advice &mdash; specific observations about your neural architecture.</p>
                 </div>
                 <div class="app-card">
-                    <div class="app-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    </div>
-                    <div>
-                        <h3>Longevity &amp; Preservation</h3>
-                        <p>Create a comprehensive cognitive archive &mdash; a time-stamped record of your neural identity. As the science advances, your data becomes the foundation for future cognitive preservation.</p>
-                    </div>
+                    <h3>Preserve a cognitive record</h3>
+                    <p>A time-stamped snapshot of your brain's functional state. As the science advances, this data becomes the foundation for things that don't exist yet. The best time to archive was yesterday.</p>
                 </div>
                 <div class="app-card">
-                    <div class="app-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div>
-                        <h3>Research Contribution</h3>
-                        <p>Opt in to contribute anonymized data to advance neuroscience research. Help build the world's largest consented neural mapping dataset and accelerate breakthroughs for everyone.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <span class="section-label">About</span>
-            <h2 class="section-title">Our mission</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Neural Download is being built by a team passionate about computational neuroscience, clinical neuroimaging, and machine learning, who share a conviction: the tools to understand the human brain at the individual level already exist &mdash; they just have not been made accessible.</p>
-                    <p>We are building the infrastructure to give every person a detailed, actionable map of their own mind. Not decades from now, but today, using validated imaging techniques and modern computational methods.</p>
-                    <p>Backed by investors at the intersection of biotech and frontier AI, we are scaling our imaging partnerships, expanding our modeling pipeline, and working toward our first consumer-facing neural mapping centers.</p>
-                    <p>Based in North America, with plans to expand as the project grows.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <span class="stat-num">Growing</span>
-                        <span class="stat-label">Team</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num">Funded</span>
-                        <span class="stat-label">Venture-backed</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num">Multi</span>
-                        <span class="stat-label">Imaging partners</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num">SF</span>
-                        <span class="stat-label">Headquarters</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research" class="research">
-        <div class="container">
-            <span class="section-label">Research</span>
-            <h2 class="section-title">Research directions</h2>
-            <p class="section-subtitle">Our research team is exploring these areas, with publications planned as work matures.</p>
-            <div class="research-list">
-                <div class="research-item">
-                    <h4>Multi-Modal Connectome Reconstruction</h4>
-                    <p>Exploring pipelines for integrating functional and structural imaging to produce individualized connectomes with high fidelity.</p>
-                    <div class="research-meta">In progress &middot; Neural Download Research</div>
-                </div>
-                <div class="research-item">
-                    <h4>Longitudinal Cognitive Fingerprinting</h4>
-                    <p>Investigating whether repeated high-density EEG captures stable individual signatures while remaining sensitive to clinically meaningful change.</p>
-                    <div class="research-meta">In progress &middot; Neural Download Research</div>
-                </div>
-                <div class="research-item">
-                    <h4>Privacy-Preserving Federated Learning</h4>
-                    <p>Developing architectures for training neural models on distributed datasets without exposing individual participant data.</p>
-                    <div class="research-meta">In progress &middot; Neural Download Research</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Careers -->
-    <section id="careers" class="careers">
-        <div class="container">
-            <span class="section-label">Careers</span>
-            <h2 class="section-title">Future openings</h2>
-            <p class="section-subtitle">As we grow, we plan to hire across engineering, neuroscience, and operations. Interested? Reach out.</p>
-            <div class="careers-grid">
-                <div class="career-card">
-                    <h4>Senior ML Engineer &mdash; Neural Modeling</h4>
-                    <div class="career-team">Engineering &middot; San Francisco</div>
-                    <p>Build and optimize deep learning pipelines for connectome reconstruction and cognitive modeling.</p>
-                </div>
-                <div class="career-card">
-                    <h4>Computational Neuroscientist</h4>
-                    <div class="career-team">Research &middot; Boston</div>
-                    <p>Develop methods for multi-modal neural data fusion and individualized brain modeling.</p>
-                </div>
-                <div class="career-card">
-                    <h4>Clinical Imaging Partnerships Lead</h4>
-                    <div class="career-team">Operations &middot; San Francisco</div>
-                    <p>Scale our network of partner imaging centers and manage clinical data workflows.</p>
-                </div>
-                <div class="career-card">
-                    <h4>Data Security Engineer</h4>
-                    <div class="career-team">Engineering &middot; Remote</div>
-                    <p>Architect and maintain secure infrastructure for sensitive neural data at scale.</p>
+                    <h3>Contribute to research</h3>
+                    <p>Opt in to add anonymized data to the largest consented neural mapping dataset being assembled. Your scan helps train models that will benefit everyone. Participation is always voluntary.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Privacy -->
-    <section id="privacy" class="privacy">
+    <section id="privacy">
         <div class="container">
-            <span class="section-label">Privacy</span>
-            <h2 class="section-title">Your data, your control</h2>
+            <div class="section-label">Privacy</div>
+            <h2 class="section-title">Your data. Literally no one else's.</h2>
             <div class="privacy-content">
-                <p>Neural data is among the most sensitive personal information that exists. We take this responsibility seriously. Our privacy framework is designed to exceed current regulatory requirements and set a new standard for neural data stewardship.</p>
-
-                <h3>Core principles</h3>
-                <ul>
-                    <li><strong>Ownership:</strong> You own your neural data. We process it on your behalf and at your direction.</li>
-                    <li><strong>Encryption:</strong> We use strong encryption at rest and in transit. Decryption keys are derived from your credentials.</li>
-                    <li><strong>No third-party access:</strong> Your data is never sold, shared, or made accessible to third parties without your explicit, informed, revocable consent.</li>
-                    <li><strong>Full portability:</strong> Export your complete neural profile in open, documented formats at any time.</li>
-                    <li><strong>Right to deletion:</strong> Request permanent deletion of all your data, including backups, at any time.</li>
+                <p>Brain scans are the most intimate data that exists. More personal than DNA. We treat them that way.</p>
+                <p>There is no business model that involves selling your data. There never will be. If that changes, the company has failed.</p>
+                <ul class="privacy-list">
+                    <li>You own your neural data. Full stop. We process it at your direction.</li>
+                    <li>Encrypted at rest and in transit. Decryption keys derived from your credentials.</li>
+                    <li>Zero third-party access without your explicit, revocable consent.</li>
+                    <li>Full export in open formats whenever you want.</li>
+                    <li>Permanent deletion on request &mdash; including backups.</li>
                 </ul>
-
-                <h3>Compliance</h3>
-                <p>Neural Download is designed with HIPAA and GDPR requirements in mind. We are pursuing third-party security audits and relevant compliance certifications as the platform matures.</p>
-
-                <p>For our full privacy policy or to exercise your data rights, contact <a href="mailto:privacy@neural.download" style="color: var(--accent);">privacy@neural.download</a>.</p>
+                <p style="margin-top: 24px;">Designed for HIPAA and GDPR. Pursuing independent security audits. For data rights: <a href="mailto:privacy@neural.download" style="color: var(--accent);">privacy@neural.download</a>.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <span class="section-label">Contact</span>
-            <h2 class="section-title">Get in touch</h2>
-            <p class="section-subtitle">Whether you are interested in early access, investment, or partnership opportunities, we would like to hear from you.</p>
+            <div class="section-label">Get in Touch</div>
+            <h2 class="section-title">We're building this carefully</h2>
+            <p class="section-body">Early access is limited. We're onboarding people slowly because the imaging pipeline needs to be right before it's fast. If that sounds reasonable to you, get in touch.</p>
+
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h3>General &amp; Early Access</h3>
-                    <p>Learn more about Neural Download or request early access to our consumer neural mapping program.</p>
-                    <p><a href="mailto:hello@neural.download">hello@neural.download</a></p>
+                    <h3>Early access</h3>
+                    <p>Want to be scanned. Have questions about the process.</p>
+                    <a href="mailto:hello@neural.download">hello@neural.download</a>
                 </div>
                 <div class="contact-card">
-                    <h3>Investor Relations</h3>
-                    <p>For prospectus requests, financial inquiries, and partnership opportunities.</p>
-                    <p><a href="mailto:invest@neural.download">invest@neural.download</a></p>
+                    <h3>Research collaboration</h3>
+                    <p>Academic or clinical. Have data or problems we should see.</p>
+                    <a href="mailto:research@neural.download">research@neural.download</a>
                 </div>
                 <div class="contact-card">
-                    <h3>Research &amp; Academic</h3>
-                    <p>Interested in collaborating on neuroscience research or accessing our dataset for academic purposes.</p>
-                    <p><a href="mailto:research@neural.download">research@neural.download</a></p>
+                    <h3>Work with us</h3>
+                    <p>Computational neuroscience, ML, imaging, infrastructure.</p>
+                    <a href="mailto:careers@neural.download">careers@neural.download</a>
                 </div>
                 <div class="contact-card">
-                    <h3>Careers</h3>
-                    <p>See an open role that fits, or want to send a general application.</p>
-                    <p><a href="mailto:careers@neural.download">careers@neural.download</a></p>
+                    <h3>Investors</h3>
+                    <p>Serious inquiries from people who understand timelines.</p>
+                    <a href="mailto:invest@neural.download">invest@neural.download</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">neural<span class="logo-dot"></span>download</a>
-                    <p>Personal neural mapping for longevity, medical insight, and cognitive enhancement.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#research">Research</a></li>
-                            <li><a href="#careers">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Product</h4>
-                        <ul>
-                            <li><a href="#platform">Platform</a></li>
-                            <li><a href="#science">Science</a></li>
-                            <li><a href="#applications">Applications</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#privacy">Privacy</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Neural Download, Inc. All rights reserved.</p>
+        <div class="container footer-inner">
+            <span class="footer-text">&copy; 2026 Neural Download, Inc.</span>
+            <div class="footer-links">
+                <a href="#how-it-works">Process</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        // Smooth scrolling for anchor links with offset for fixed header
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    return;
+                const id = this.getAttribute('href');
+                if (id === '#') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+                const t = document.querySelector(id);
+                if (t) {
+                    const h = document.querySelector('header').offsetHeight;
+                    window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - h - 20, behavior: 'smooth' });
                 }
-                const target = document.querySelector(targetId);
-                if (target) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                }
-                // Close mobile nav if open
-                const nav = document.querySelector('nav');
-                if (nav.classList.contains('open')) {
-                    nav.classList.remove('open');
-                }
+                document.querySelector('nav').classList.remove('open');
             });
         });
-
-        // Mobile nav toggle
         document.querySelector('.nav-toggle').addEventListener('click', () => {
             document.querySelector('nav').classList.toggle('open');
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -40px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .tech-step, .market-card, .app-card, .stat-card, .research-item, .career-card, .contact-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
         });
     </script>
 </body>
