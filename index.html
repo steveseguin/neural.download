@@ -16,9 +16,9 @@
             --warm: #c8b88a;
             --text: #f0efe8;
             --text-body: #c4c3ba;
-            --text-muted: #8a8980;
+            --text-muted: #a3a298;
             --glass: rgba(255, 255, 255, 0.04);
-            --max-width: 860px;
+            --max-width: 960px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,9 +44,11 @@
 
         /* Header */
         header {
-            background: rgba(26, 71, 42, 0.95);
+            background: rgba(7, 18, 9, 0.82);
             backdrop-filter: blur(12px);
-            padding: 16px 0;
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 14px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -120,17 +122,27 @@
 
         /* Hero */
         .hero {
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             padding-top: 80px;
-            background: linear-gradient(170deg, var(--primary-dark) 0%, var(--primary) 70%, #1b4332 100%);
+            background:
+                radial-gradient(ellipse 70% 60% at 75% 45%, rgba(46, 125, 50, 0.22), transparent 70%),
+                linear-gradient(170deg, var(--primary-dark) 0%, var(--primary) 75%, #1b4332 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 56px;
+            align-items: center;
+            padding-top: 56px;
+            padding-bottom: 56px;
+            width: 100%;
         }
 
         .hero-content {
-            max-width: 620px;
-            margin: 0 auto;
-            padding: 60px 24px;
+            max-width: 580px;
         }
 
         .hero h1 {
@@ -201,16 +213,25 @@
 
         /* Sections */
         section {
-            padding: 100px 0;
+            padding: 104px 0;
+            position: relative;
         }
 
         section::before {
             content: '';
-            position: relative;
-            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(129,199,132,0.15), transparent);
-            margin-bottom: 100px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
         .section-label {
@@ -289,9 +310,15 @@
 
         .app-card {
             background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
             padding: 28px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .app-card:hover {
+            border-color: rgba(129,199,132,0.22);
+            background: rgba(255, 255, 255, 0.055);
         }
 
         .app-card h3 {
@@ -354,7 +381,7 @@
 
         .contact-card {
             background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
             padding: 28px;
         }
@@ -383,7 +410,8 @@
 
         /* Footer */
         footer {
-            background: var(--primary);
+            background: #050e07;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             padding: 40px 0;
         }
 
@@ -453,19 +481,22 @@
 
         /* Hero brain visual */
         .hero-brain {
-            position: absolute;
-            right: -60px;
-            bottom: -40px;
-            width: 380px;
-            height: 380px;
-            opacity: 0.06;
+            width: 100%;
+            max-width: 360px;
+            justify-self: end;
+            opacity: 0.55;
             pointer-events: none;
             animation: brain-pulse 8s ease-in-out infinite;
         }
 
         @keyframes brain-pulse {
-            0%, 100% { opacity: 0.06; transform: scale(1); }
-            50% { opacity: 0.09; transform: scale(1.02); }
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.68; transform: scale(1.02); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .reveal, .stagger-children > * { opacity: 1; transform: none; }
         }
 
         .hero { position: relative; overflow: hidden; }
@@ -485,6 +516,8 @@
                 gap: 14px;
             }
             nav.open { display: flex; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-brain { display: none; }
             .hero h1 { font-size: 2.2rem; }
             .app-grid, .contact-grid { grid-template-columns: 1fr; }
             .process-step { grid-template-columns: 40px 1fr; }
@@ -511,36 +544,38 @@
     </header>
 
     <div class="hero">
-        <svg class="hero-brain" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M150 30 C100 30, 50 70, 50 130 C50 180, 80 220, 110 240 C120 246, 130 260, 140 270 L160 270 C170 260, 180 246, 190 240 C220 220, 250 180, 250 130 C250 70, 200 30, 150 30Z" stroke="var(--accent)" stroke-width="1" fill="none"/>
-            <path d="M150 50 C150 90, 120 120, 120 160 C120 190, 140 210, 150 230" stroke="var(--accent)" stroke-width="0.8" fill="none"/>
-            <path d="M110 80 C130 90, 140 110, 130 140" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
-            <path d="M190 80 C170 90, 160 110, 170 140" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
-            <path d="M80 120 C100 115, 120 125, 130 150" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
-            <path d="M220 120 C200 115, 180 125, 170 150" stroke="var(--accent)" stroke-width="0.6" fill="none"/>
-            <circle cx="110" cy="80" r="3" fill="var(--accent)"/>
-            <circle cx="190" cy="80" r="3" fill="var(--accent)"/>
-            <circle cx="80" cy="120" r="2.5" fill="var(--accent)"/>
-            <circle cx="220" cy="120" r="2.5" fill="var(--accent)"/>
-            <circle cx="130" cy="140" r="2.5" fill="var(--accent)"/>
-            <circle cx="170" cy="140" r="2.5" fill="var(--accent)"/>
-            <circle cx="150" cy="160" r="3" fill="var(--accent)"/>
-            <circle cx="120" cy="190" r="2" fill="var(--accent)"/>
-            <circle cx="180" cy="190" r="2" fill="var(--accent)"/>
-            <line x1="110" y1="80" x2="130" y2="140" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
-            <line x1="190" y1="80" x2="170" y2="140" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
-            <line x1="130" y1="140" x2="170" y2="140" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
-            <line x1="150" y1="160" x2="120" y2="190" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
-            <line x1="150" y1="160" x2="180" y2="190" stroke="var(--accent)" stroke-width="0.4" stroke-dasharray="3 3"/>
-        </svg>
-        <div class="hero-content">
-            <h1>Your brain.<br><em>Backed up.</em></h1>
-            <p class="hero-body">We scan your brain with clinical-grade imaging &mdash; 7T fMRI, 256-channel EEG, diffusion tensor &mdash; and build a computational model of how your specific brain works. Not an average. Not a diagram. A working simulation of your neural architecture.</p>
-            <p class="hero-aside">Think of it as version control for the most complex thing you own. The imaging technology exists today. The compute to model it exists today. Nobody had put them together for individuals until now.</p>
-            <div class="cta-group">
-                <a href="#how-it-works" class="cta-button cta-primary">See how it works</a>
-                <a href="#contact" class="cta-button cta-secondary">Request early access</a>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Your brain.<br><em>Backed up.</em></h1>
+                <p class="hero-body">We scan your brain with clinical-grade imaging &mdash; 7T fMRI, 256-channel EEG, diffusion tensor &mdash; and build a computational model of how your specific brain works. Not an average. Not a diagram. A working simulation of your neural architecture.</p>
+                <p class="hero-aside">Think of it as version control for the most complex thing you own. The imaging technology exists today. The compute to model it exists today. Nobody had put them together for individuals until now.</p>
+                <div class="cta-group">
+                    <a href="#how-it-works" class="cta-button cta-primary">See how it works</a>
+                    <a href="#contact" class="cta-button cta-secondary">Request early access</a>
+                </div>
             </div>
+            <svg class="hero-brain" aria-hidden="true" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M150 30 C100 30, 50 70, 50 130 C50 180, 80 220, 110 240 C120 246, 130 260, 140 270 L160 270 C170 260, 180 246, 190 240 C220 220, 250 180, 250 130 C250 70, 200 30, 150 30Z" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+                <path d="M150 50 C150 90, 120 120, 120 160 C120 190, 140 210, 150 230" stroke="var(--accent)" stroke-width="1.2" fill="none"/>
+                <path d="M110 80 C130 90, 140 110, 130 140" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                <path d="M190 80 C170 90, 160 110, 170 140" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                <path d="M80 120 C100 115, 120 125, 130 150" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                <path d="M220 120 C200 115, 180 125, 170 150" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                <circle cx="110" cy="80" r="3" fill="var(--accent)"/>
+                <circle cx="190" cy="80" r="3" fill="var(--accent)"/>
+                <circle cx="80" cy="120" r="2.5" fill="var(--accent)"/>
+                <circle cx="220" cy="120" r="2.5" fill="var(--accent)"/>
+                <circle cx="130" cy="140" r="2.5" fill="var(--accent)"/>
+                <circle cx="170" cy="140" r="2.5" fill="var(--accent)"/>
+                <circle cx="150" cy="160" r="3" fill="var(--accent)"/>
+                <circle cx="120" cy="190" r="2" fill="var(--accent)"/>
+                <circle cx="180" cy="190" r="2" fill="var(--accent)"/>
+                <line x1="110" y1="80" x2="130" y2="140" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                <line x1="190" y1="80" x2="170" y2="140" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                <line x1="130" y1="140" x2="170" y2="140" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                <line x1="150" y1="160" x2="120" y2="190" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                <line x1="150" y1="160" x2="180" y2="190" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="3 3"/>
+            </svg>
         </div>
     </div>
 
